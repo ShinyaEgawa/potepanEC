@@ -8,7 +8,7 @@
     <% if product.variants.any? %>
       <% variant.images.each_with_index do | image, index | %>
       <div class="item" data-thumb="<%= index %>"></div>
-        <%= image_tag(image.attachment(:small)) %>
+        <%= image_tag(image.attachment(:large)) %>
       <% end %>
     <% end %>
   </div>
