@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   mount Spree::Core::Engine, at: '/'
 
   namespace :potepan do
-    get '/',                        to: 'homes#main'
-    get 'index',                    to: 'sample#index'
+    root                            to: 'homes#main'
+    get :index,                     to: 'sample#index'
     get :product_grid_left_sidebar, to: 'sample#product_grid_left_sidebar'
     get :product_list_left_sidebar, to: 'sample#product_list_left_sidebar'
     get :cart_page,                 to: 'sample#cart_page'
@@ -18,6 +18,6 @@ Rails.application.routes.draw do
     get :about_us,                  to: 'sample#about_us'
     get :tokushoho,                 to: 'sample#tokushoho'
     get :privacy_policy,            to: 'sample#privacy_policy'
-    resources 'products',           only: :show
+    resources :products,            only: :show
   end
 end

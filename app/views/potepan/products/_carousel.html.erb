@@ -1,14 +1,15 @@
 <div id="carousel" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <% product.master.images.each_with_index do | image, index | %>
-    <div class="item<%= "active" if index.zero?  %>" data-thumb="<%= index %>">
+    <div class="item <%= "active" if index.zero? %>" data-thumb="<%= index %>">
       <%= image_tag(image.attachment(:large)) %>
     </div>
     <% end %>
     <% if product.variants.any? %>
-      <% variant.images.each_with_index do | image, index | %>
-      <div class="item" data-thumb="<%= index %>"></div>
-        <%= image_tag(image.attachment(:large)) %>
+      <% variant.images.each.with_index(variant.images.count) do |image, index| %>
+        <div class="item" data-thumb="<%= index %>">
+          <%= image_tag image.attachment(:large) %>
+        </div>
       <% end %>
     <% end %>
   </div>
