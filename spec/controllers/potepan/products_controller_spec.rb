@@ -6,6 +6,7 @@ RSpec.describe Potepan::ProductsController, type: :controller do
     let!(:taxon) { create(:taxon) }
     let!(:product) { create(:product, taxons: [taxon]) }
     let!(:related_products) { create_list(:product, 5, taxons: [taxon]) }
+    let!(:unrelated_product) { create(:product) }
 
     before do
       get :show, params: { id: product.id }
@@ -28,7 +29,11 @@ RSpec.describe Potepan::ProductsController, type: :controller do
     end
 
     it 'メインの商品が関連商品に表示されていないこと' do
-      expect(assigns(:related_products)).not_to eq include product
+      expect(assigns(:related_products)).not_to include product
+    end
+
+    it '関連していない商品が関連商品に表示されていないこと' do
+      expect(assigns(:related_products)).not_to include unrelated_product
     end
   end
 end
