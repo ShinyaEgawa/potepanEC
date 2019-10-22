@@ -13,4 +13,3 @@ AllCops:
     - 'vendor/**/*'
     - 'path/ruby'
     - 'spec/spec_helper.rb'
-    - 'app/models/spree/*'
