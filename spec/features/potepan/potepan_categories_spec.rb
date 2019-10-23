@@ -15,10 +15,6 @@ RSpec.feature "Potepan::Categories", type: :feature do
     expect(page).to have_content product.display_price
   end
 
-  scenario 'タイトルがカテゴリ名+サイト名となっていること' do
-    expect(page).to have_title("#{taxon.name} - BIGBAG Store")
-  end
-
   scenario 'サイドバーが正しく表示されていること' do
     within ".side-nav" do
       expect(page).to have_content taxonomy.name
@@ -29,5 +25,9 @@ RSpec.feature "Potepan::Categories", type: :feature do
     expect(page).to have_link product.name
     click_on product.name
     expect(current_path).to eq potepan_product_path(product.id)
+  end
+
+  scenario 'タイトルがカテゴリ名+サイト名となっていること' do
+    expect(page).to have_title("#{taxon.name} - BIGBAG Store")
   end
 end
