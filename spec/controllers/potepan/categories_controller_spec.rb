@@ -31,7 +31,7 @@ RSpec.describe Potepan::CategoriesController, type: :controller do
       expect(assigns(:products)).to contain_exactly product
     end
 
-    it 'other_productを@productに含めないこと' do
+    it 'other_productが@productに含まれていないこと' do
       expect(assigns(:products)).not_to include other_product
     end
   end
