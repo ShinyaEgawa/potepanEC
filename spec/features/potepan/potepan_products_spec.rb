@@ -20,7 +20,7 @@ RSpec.feature "Potepan::Products", type: :feature do
     expect(page).to have_content related_product.display_price
   end
 
-  scenario '関連商品から商品ページに移動ができること' do
+  scenario '関連商品から商品ページに移動すること' do
     expect(page).to have_link related_product.name
     click_on related_product.name
     expect(current_path).to eq potepan_product_path(related_product.id)
