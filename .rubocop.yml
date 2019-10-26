@@ -13,3 +13,8 @@ AllCops:
     - 'vendor/**/*'
     - 'path/ruby'
     - 'spec/spec_helper.rb'
+
+Airbnb/ModuleMethodInWrongFile:
+  Enabled: false
+  Include:
+    - 'app/models/spree/taxon_decorator.rb'
