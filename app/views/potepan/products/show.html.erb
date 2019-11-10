@@ -38,14 +38,11 @@
             <h2><%= @product.name %></h2>
             <h3><%= @product.display_price %></h3>
             <p><%= @product.description %></p>
-            <span class="quick-drop">
-              <select name="guiest_id3" id="guiest_id3" class="select-drop">
-                <option value="0">S</option>
-                <option value="1">M</option>
-                <option value="2">L</option>
-                <option value="3">XL</option>
-              </select>
-            </span>
+            <% if @product.variants.present? %>
+              <span class="quick-drop">
+                <%= select_tag "guiest_id3", options_from_collection_for_select(@product.variants, :id, :options_text), class: "select-drop" %>
+              </span>
+            <% end %>
             <span class="quick-drop resizeWidth">
               <select name="guiest_id4" id="guiest_id4" class="select-drop">
                 <option value="1">1</option>
