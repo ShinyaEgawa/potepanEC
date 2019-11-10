@@ -20,7 +20,7 @@ RSpec.describe Potepan::CategoriesController, type: :controller do
     end
 
     it '@taxonが期待される値を持っていること' do
-      expect(assigns(:taxon)).to eq(taxon)
+      expect(assigns(:taxon)).to eq taxon
     end
 
     it '@taxonomyの配列の個数と内容が正しいこと' do

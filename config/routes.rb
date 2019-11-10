@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   namespace :potepan do
     root                            to: 'homes#index'
-    get :index,                     to: 'sample#index'
+    get :index,                     to: 'homes#index'
     get :product_grid_left_sidebar, to: 'sample#product_grid_left_sidebar'
     get :product_list_left_sidebar, to: 'sample#product_list_left_sidebar'
     get :cart_page,                 to: 'sample#cart_page'
