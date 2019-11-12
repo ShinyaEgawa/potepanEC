@@ -51,4 +51,4 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV['lolyz0ok3stvj6f0.cbetxkdyhwsb.us-east-1.rds.amazonaws.com']&.sub('mysql://', 'mysql2://') %>
+  url: <%= ENV['JAWSDB_URL']&.sub('mysql://', 'mysql2://') %>
